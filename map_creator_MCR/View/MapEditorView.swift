@@ -237,23 +237,23 @@ struct MapEditorView: View {
     }
 }
 
-struct ObstacleView: View {
-    let obstacle : Obstacle
-    var body: some View {
-        Group {
-            Rectangle()
-                .fill(Color.clear)
-                .background(
-                    Image(obstacle.image!)
-                        .resizable()
-                        .scaledToFit()
-                )
-        }
-        .overlay(
-            RoundedRectangle(cornerRadius: 2)
-                .stroke(Color.black, lineWidth: 1))
-    }
-}
+//struct ObstacleView: View {
+//    let obstacle : Obstacle
+//    var body: some View {
+//        Group {
+//            Rectangle()
+//                .fill(Color.clear)
+//                .background(
+//                    Image(obstacle.image!)
+//                        .resizable()
+//                        .scaledToFit()
+//                )
+//        }
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 2)
+//                .stroke(Color.black, lineWidth: 1))
+//    }
+//}
 //#Preview {
 //    MapEditorView()
 //}

@@ -11,7 +11,7 @@ import SwiftUI
 struct map_creator_MCRApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapEditorView()
         }
     }
 }

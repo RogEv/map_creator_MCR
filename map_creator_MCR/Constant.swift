@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Constant {
+     static let scale = 40.0
+}
