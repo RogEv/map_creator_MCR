@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SwiftUICore
+
+struct Ball {
+    var color: Color
+    var size: Double
+}

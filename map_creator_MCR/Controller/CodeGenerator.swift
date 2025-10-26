@@ -162,14 +162,14 @@ class CodeGenerator {
     
     func codeGeneratorByType(type: Obstacle.ObstacleType) -> String {
         var codString = ""
-        let lCeiling = gameMap.obstacles.filter { $0.type == type }
-        let newLceiling = lCeiling.compactMap { obstacle in
+        let item = gameMap.obstacles.filter { $0.type == type }
+        let newItem = item.compactMap { obstacle in
             var obs = obstacle
             obs.position.x = obs.position.x.rounded(decimals: 2)
             obs.position.y = (CGFloat(gameMap.height) - obstacle.position.y).rounded(decimals: 2)
             return obs
         }
-        for item in newLceiling {
+        for item in newItem {
             codString += "\(item.code) \n"
         }
         return codString
@@ -182,7 +182,9 @@ class CodeGenerator {
         levelData = LevelData(
             size: CGSize(width: \(gameMap.width), height: 10),
             balls: [
-                LBubble(tintColor: UIColor.bc(1), radius: 0.5),
+                LBubble(tintColor: UIColor.bc(\(Int.random(in: 0...7))), radius: 0.4),
+                LBubble(tintColor: UIColor.bc(\(Int.random(in: 0...7))), radius: 0.3),
+                LBubble(tintColor: UIColor.bc(\(Int.random(in: 0...7))), radius: 0.25)
             ],
             gasCyls: [
                 \(codeGeneratorByType(type: .gasCyls))
@@ -219,6 +221,22 @@ class CodeGenerator {
                 ],
             electricBoxes: [
                 \(codeGeneratorByType(type: .electricBoxes))
+                ],
+            hoods: [
+                \(codeGeneratorByType(type: .hood))
+                ],
+            lightnings: [
+                \(codeGeneratorByType(type: .lightnings))
+                ],
+            magnets: [
+                \(codeGeneratorByType(type: .magnets))
+                ],
+            labyrinths: [
+                LLabyrinth(elements: [
+                    \(codeGeneratorByType(type: .labyrinths))
+                ])],
+            toxics: [
+                \(codeGeneratorByType(type: .toxics))
                 ]
         )
 """

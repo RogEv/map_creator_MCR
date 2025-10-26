@@ -1,0 +1,65 @@
+//
+//  Enum.swift
+//  map_creator_MCR
+//
+//  Created by Evgeni Rozkov on 26.10.25.
+//
+import Foundation
+
+enum ObstacleObject: String, CaseIterable, Codable {
+    case gasCyls_gas = "gas_burner"
+    case gasCyls_goGas = "go_gas_cyl"
+    case ceilingItems_hand = "hand"
+    case ceilingItems_lamp = "lamp"
+    case ceilingItems_spikes_01 = "spikes_01"
+    case ceilingItems_spikes_02 = "spikes_02"
+    case ceilingItems_go_death_wheel = "go_death_wheel"
+    case lLeatherBall_nailed_leather = "nailed_leather"
+    case lLeatherBall_go_soft_round_1 = "go_soft_round_1"
+    case lLeatherBall_go_soft_round_05 = "go_soft_round_3"
+    case clock = "clock"
+    case distiller_01 = "distiller_01_body"
+    case distiller_02 = "distiller_02"
+    case suitcases_1 = "suitcases_1_physics"
+    case top_piping = "top_piping"
+    case go_flask_01 = "go_flask_01_physics_shape"
+    case lamp = "lamp_lamp_on"
+    case knife_01 = "knife_01"
+    case knife_02 = "knife_02"
+    case book_01 = "book_01"
+    case book_02 = "book_02"
+    case book_03 = "book_03"
+    case book_05 = "book_05"
+    case barbed_wire = "barbed_wire"
+    case tube_01_damaged = "tube_01"
+    case bombs = "bomb_on"
+    case flask_01_damaged = "flask_01"
+    case pitcher = "pitcher"
+    case el_wires_02 = "el_wires_02"
+    case hood = "hood"
+    case topPipes = "pipe_01"
+    case lightnings = "lightning"
+    case magnet = "magnet"
+    case lgen_body = "lgen_body"
+    
+    case h_l_2x1 = "horinzontal_narrow_left_2x1"
+    case h_r_2x1 = "horinzontal_narrow_right_2x1"
+    case h_3x1 = "horinzontal_3x1"
+    case h_2x1 = "horinzontal_2x1"
+    case r_h_5x4 = "raund_horinzontal_5x4"
+    case t_b_3x2 = "T_botton_3x2"
+    case t_u_3x2 = "T_down_3x2"
+    case v_b_1x2 = "vertical_narrow_up_1x2"
+    case v_t_1x2 = "vertical_narrow_down_1x2"
+    case x_3x3 = "cross_3x3"
+    case с_r_t_2x2 = "L_right_top_2x2"
+    case с_l_t_2x2 = "L_left_top_2x2"
+    case с_r_b_2x2 = "L_right_bottom_2x2"
+    case с_l_b_2x2 = "L_left_bottom_2x2"
+    
+    case toxic_1 = "toxic_1"
+    case toxic_2 = "toxic_2"
+    case toxic_3 = "toxic_3"
+    case toxic_4 = "toxic_4"
+    case toxic_5 = "toxic_5"
+}
