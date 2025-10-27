@@ -76,13 +76,28 @@ class MapController: ObservableObject {
         savePanel.nameFieldStringValue = fileName
         
         savePanel.begin { response in
-            guard response == .OK, let url = savePanel.url else { return }
-            
-            do {
-                try text.write(to: url, atomically: true, encoding: .utf8)
-                NSSound(named: "Glass")?.play()
-            } catch {
-                print("Ошибка: \(error.localizedDescription)")
+            // Безопасная проверка response
+            if response == .OK {
+                guard let url = savePanel.url else {
+                    print("Ошибка: не удалось получить URL")
+                    return
+                }
+                
+                do {
+                    try text.write(to: url, atomically: true, encoding: .utf8)
+                    print("Файл успешно сохранен: \(url.path)")
+                    
+                    // Безопасное воспроизведение звука
+                    if let sound = NSSound(named: "Glass") {
+                        sound.play()
+                    } else {
+                        print("Звук 'Glass' не найден")
+                    }
+                } catch {
+                    print("Ошибка сохранения файла: \(error.localizedDescription)")
+                }
+            } else {
+                print("Пользователь отменил сохранение")
             }
         }
     }
